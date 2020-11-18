@@ -8,7 +8,7 @@ export interface ISpaceLaunchData {
   flight_number: number;
   mission_name: string;
   mission_id: [string];
-  launch_year: boolean;
+  launch_year: string;
   launch_success: boolean;
   links: {
     mission_patch_small: string;

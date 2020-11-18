@@ -71,18 +71,18 @@
     font-weight: bold;
   }
 @media screen and (max-width: 768px) {
-  .filter {
+  .filter, .grid-container .grid-item {
     grid-column: span 6;
   }
-  .main-content {
+  .main-content, .grid-container .grid-item  {
     grid-column: span 6;
   }
 }
 @media screen and (max-width: 480px) {
-  .filter {
+  .filter , .grid-container .grid-item{
     grid-column: span 12;
   }
-  .main-content {
+  .main-content, .grid-container .grid-item {
     grid-column: span 12;
   }
 }

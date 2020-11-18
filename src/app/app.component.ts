@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ISpaceLaunchData, SpaceLaunchDataAccessService} from './spacex-launch-data/spacex-launch-data-access.service';
 export interface IRequestParams {
   limit: number;
@@ -11,7 +11,7 @@ export interface IRequestParams {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // tslint:disable-next-line:variable-name
   public spaceLaunchPrograms: Partial<ISpaceLaunchData>;
   public authorName = 'Manisha Monga';
@@ -24,6 +24,11 @@ export class AppComponent {
   private _params: IRequestParams;
   // tslint:disable-next-line:variable-name
   constructor(private _spaceLaunchDataAccessService: SpaceLaunchDataAccessService) {
+  console.log('comes in the constructor');
+  }
+
+  ngOnInit(): void {
+    console.log('comes here');
     this._params = {
       limit: 100
     };
@@ -42,7 +47,7 @@ export class AppComponent {
     this._getLaunchPrograms(this._params);
   }
 
-  private _getLaunchPrograms(params?: IRequestParams): void {
+  private _getLaunchPrograms(params: IRequestParams): void {
     this._spaceLaunchDataAccessService.getSpaceLaunchPrograms(params).subscribe(data => {
       this.spaceLaunchPrograms = data;
     });

@@ -1,5 +1,6 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
+const unitTestsPath = '../unit-tests';
 
 module.exports = function (config) {
   config.set({
@@ -15,10 +16,26 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    htmlReporter: {
+      outputFile: unitTestsPath + '/unit-tests.html',
+      // Optional
+      pageTitle: 'Portal-Ng Unit Tests',
+      // subPageTitle: 'A sample project description',
+      groupSuites: true,
+      useCompactStyle: true,
+      useLegacyStyle: false,
+      showOnlyFailed: false
+    },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage/spacex'),
+      // dir: require('path').join(__dirname, '../coverage/spacex'),
       reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 99,
+        lines: 99,
+        branches: 98,
+        functions: 99
+      }
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
