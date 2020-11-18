@@ -1,21 +1,38 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class= "container">
+  <div class="header">SpaceX Launch Programs</div>
+  <div class="filter">
+    <div class="grid-container">
+      <div class="grid-item">
+        <h4>Filters</h4>
+        <p class="alignP">Launch Year</p>
+        <hr>
+        <span *ngFor="let year of launchYears">
+          <button class="btn" (click)="filterLaunchProgramsByYears(year)" [ngClass]="{'active': isActiveYear === year}">{{year}}</button>
+        </span>
+        <p class="alignP">Successful Launch</p>
+        <hr>
+        <span *ngFor="let launch of launches">
+          <button class="btn" (click)="filterLaunchProgramsByLaunch(launch)" [ngClass]="{'active': isActiveLaunch === launch}">{{launch}}</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let data of spaceLaunchPrograms">
+          <img class="image" src="{{data.links.mission_patch_small}}"/>
+        <h4 class="flightNum" >{{data.mission_name}}#{{data.flight_number}}</h4>
+        <h5>Mission IDs:
+          <ul *ngFor="let missionId of data.mission_id ">
+            <li>{{missionId}}</li>
+          </ul>
+        </h5>
+        <h5>Launch Year: {{data.launch_year}}</h5>
+        <h5>Successful Launch: {{data.launch_success}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="footer">Developed by : {{authorName}}</div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
 <router-outlet></router-outlet>

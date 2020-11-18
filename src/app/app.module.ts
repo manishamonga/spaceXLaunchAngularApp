@@ -3,16 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {SpaceLaunchDataAccessService} from './spacex-launch-data/spacex-launch-data-access.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SpaceLaunchDataAccessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

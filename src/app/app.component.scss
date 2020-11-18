@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #f1f1f1;
+
+  }
+  .header {
+    grid-column: span 12;
+    float: left;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  .filter {
+    grid-column: span 2;
+  }
+  .alignP{
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+  margin: 12px 12px;
+  padding: 12px 12px;
+  background-color: lightgreen;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.active{
+  background-color: green;
+  color: white;
+}
+  .main-content {
+    grid-column: span 10;
+  }
+  .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-container .grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 20px;
+}
+.grid-item .image{
+  background-color: #f1f1f1 ;
+  width: 100%;
+}
+.flightNum{
+  color: darkslateblue;
+}
+  .footer {
+    grid-column: span 12;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    font-weight: bold;
+  }
+@media screen and (max-width: 768px) {
+  .filter {
+    grid-column: span 6;
+  }
+  .main-content {
+    grid-column: span 6;
+  }
+}
+@media screen and (max-width: 480px) {
+  .filter {
+    grid-column: span 12;
+  }
+  .main-content {
+    grid-column: span 12;
+  }
+}
