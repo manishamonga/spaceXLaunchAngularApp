@@ -25,8 +25,10 @@ Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.gi
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Few Screenshots;
+## Few Screenshots
 
-![image](https://user-images.githubusercontent.com/20556570/99631814-3c31f280-2a62-11eb-8bef-244ba2264200.png)
+When user selected launch years, results will be displayed as per the selected launch year
+![image](https://user-images.githubusercontent.com/20556570/99632234-e3168e80-2a62-11eb-9d7a-4d0ec17f8e71.png)
+
 
 
