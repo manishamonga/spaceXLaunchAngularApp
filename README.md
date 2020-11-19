@@ -18,7 +18,7 @@ Run `npm run build-ssr` to build the project when you want to build server side 
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 
 ## Further help
